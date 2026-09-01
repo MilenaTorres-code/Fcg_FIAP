@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Fcg.Api/Fcg.Api.csproj" />
+  <Project Path="Fcg.Domain/Fcg.Domain.csproj" />
+  <Project Path="Fcg.Infrastructure/Fcg.Infrastructure.csproj" />
+  <Project Path="Fcg.Tests/Fcg.Tests.csproj" />
+</Solution>

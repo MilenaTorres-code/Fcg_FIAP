@@ -2,9 +2,9 @@
 
 API REST desenvolvida em **ASP.NET Core 8** para o projeto **FIAP Cloud Games (FCG)**.
 
-O projeto tem como objetivo fornecer a base para uma plataforma de venda de jogos digitais e gerenciamento da biblioteca de jogos adquiridos pelos usuários.
+O projeto tem como objetivo fornecer a base para uma plataforma de jogos digitais, permitindo o gerenciamento de usuários, jogos e biblioteca de jogos adquiridos.
 
-A aplicação foi desenvolvida como um **monólito**, conforme solicitado no Tech Challenge da Fase 1, utilizando separação de responsabilidades entre as camadas do projeto.
+A aplicação foi desenvolvida como um **monólito**, conforme solicitado no Tech Challenge da **Fase 1**, com separação de responsabilidades entre domínio, infraestrutura e API.
 
 ---
 
@@ -46,37 +46,31 @@ O administrador pode:
 - criar promoções;
 - consultar promoções.
 
-Os endpoints administrativos são protegidos utilizando autorização por Role.
+Os endpoints administrativos são protegidos utilizando autorização por **Role**.
 
 ---
 
 # 🏗️ Arquitetura
 
-O projeto utiliza uma arquitetura organizada em camadas:
+A aplicação utiliza uma arquitetura monolítica organizada nas seguintes camadas:
 
 ```text
 ┌─────────────────────────────────┐
 │            Fcg.Api              │
 │ Controllers / DTOs / Swagger    │
-│ HTTP / Autenticação              │
-└───────────────┬─────────────────┘
-                │
-                ↓
-┌─────────────────────────────────┐
-│        Fcg.Application          │
-│ Serviços e interfaces           │
+│ HTTP / Middlewares / JWT        │
 └───────────────┬─────────────────┘
                 │
                 ↓
 ┌─────────────────────────────────┐
 │           Fcg.Domain            │
-│ Entidades / Enums / ValueObjects│
-│ Regras de negócio               │
-└─────────────────────────────────┘
-                ↑
+│ Entidades / Enums / Regras      │
+│ de negócio                      │
+└───────────────┬─────────────────┘
                 │
-┌───────────────┴─────────────────┐
+                ↓
+┌─────────────────────────────────┐
 │       Fcg.Infrastructure        │
 │ EF Core / SQLite / Identity     │
-│ JWT / Persistência              │
+│ Persistência / Configurações    │
 └─────────────────────────────────┘

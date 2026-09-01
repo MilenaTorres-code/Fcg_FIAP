@@ -108,4 +108,4 @@ Projeto desenvolvido para o **Tech Challenge da Fase 1 da FIAP**, aplicando conh
 
 ---
 
-❤️ Feito por **Milena**
+ Feito por **Milena Torres**
